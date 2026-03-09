@@ -1,0 +1,12 @@
+[[redirects]]
+  from = "/dynamicgm"
+  to = "/dynamicgm/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/hello"
+  to = "/hello/index.html"
+  status = 200
+
+[build]
+  publish = "."

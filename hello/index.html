@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About AIIS — The AI Integration Specialists</title>
+  <meta name="description" content="A quick look at who we are and what we do for small businesses in Fort Bend and Harris County.">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #080d1a;
+      --navy-mid: #0d1528;
+      --navy-blue: #0d2b6e;
+      --electric: #00b4ff;
+      --white: #f0f4ff;
+      --muted: rgba(240,244,255,0.5);
+      --card-bg: rgba(13, 21, 40, 0.8);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,180,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,180,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 5%;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(8,13,26,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,180,255,0.1);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+    }
+
+    .logo-mark { display: flex; align-items: flex-end; line-height: 1; }
+
+    .lg-A, .lg-I {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 42px;
+      color: #1840a8;
+      text-shadow: 2px 2px 0 #0f2870, 3px 3px 0 #0a1a50, 4px 4px 8px rgba(0,0,0,0.9);
+      letter-spacing: -1px;
+    }
+
+    .I-stack { position: relative; font-family: 'Bebas Neue', sans-serif; font-size: 42px; line-height: 1; }
+
+    .sm-i {
+      position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
+      font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: #00d4ff; z-index: 5;
+      text-shadow: 0 0 8px rgba(0,212,255,0.9), 0 0 20px rgba(0,212,255,0.5);
+    }
+
+    .sm-s {
+      font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: #00d4ff;
+      align-self: flex-end; margin-bottom: 4px; margin-left: 1px;
+      text-shadow: 0 0 8px rgba(0,212,255,0.7), 0 0 18px rgba(0,212,255,0.4);
+    }
+
+    .nav-divider {
+      width: 1px; height: 28px;
+      background: linear-gradient(to bottom, transparent, #00b4ff 40%, #00b4ff 60%, transparent);
+    }
+
+    .nav-name { display: flex; flex-direction: column; gap: 2px; }
+    .nav-name-line1 {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px;
+      letter-spacing: 3px; color: #4a7fd4; text-transform: uppercase;
+    }
+    .nav-name-line2 {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 9px;
+      letter-spacing: 4px; color: #00d4ff; text-transform: uppercase;
+    }
+
+    .nav-back {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .nav-back:hover { color: var(--electric); }
+
+    /* PAGE */
+    .page-hero {
+      position: relative;
+      z-index: 1;
+      padding: 140px 5% 80px;
+      text-align: center;
+    }
+
+    .page-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px;
+      letter-spacing: 4px; text-transform: uppercase; color: var(--electric);
+      margin-bottom: 20px;
+    }
+
+    .page-title {
+      font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 7vw, 88px);
+      line-height: 1; margin-bottom: 24px;
+    }
+
+    .page-sub {
+      font-size: 18px; font-weight: 300; color: var(--muted);
+      max-width: 540px; margin: 0 auto; line-height: 1.7;
+    }
+
+    /* VIDEO PLACEHOLDER */
+    .video-section {
+      position: relative; z-index: 1;
+      padding: 0 5% 80px;
+    }
+
+    .video-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--navy-mid);
+      border: 1px solid rgba(0,180,255,0.15);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(0,100,200,0.1), transparent 65%);
+    }
+
+    .video-play {
+      width: 80px; height: 80px;
+      border: 2px solid var(--electric);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      color: var(--electric);
+      position: relative; z-index: 1;
+    }
+
+    .video-placeholder-text {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px;
+      letter-spacing: 3px; text-transform: uppercase; color: var(--muted);
+      position: relative; z-index: 1;
+    }
+
+    .video-caption {
+      text-align: center; margin-top: 20px;
+      font-size: 13px; font-weight: 300; color: rgba(240,244,255,0.3);
+      letter-spacing: 0.5px;
+    }
+
+    /* STORY */
+    .story-section {
+      position: relative; z-index: 1;
+      background: var(--navy-mid);
+      padding: 80px 5%;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px;
+      letter-spacing: 4px; text-transform: uppercase; color: var(--electric);
+      margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::before {
+      content: ''; display: inline-block; width: 24px; height: 1px; background: var(--electric);
+    }
+
+    .story-title {
+      font-family: 'Bebas Neue', sans-serif; font-size: 48px; line-height: 1;
+      margin-bottom: 28px;
+    }
+
+    .story-body p {
+      font-size: 15px; font-weight: 300; color: var(--muted);
+      line-height: 1.8; margin-bottom: 18px;
+    }
+
+    .story-body p strong { color: var(--white); font-weight: 600; }
+
+    .story-stats {
+      display: flex; flex-direction: column; gap: 28px;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(0,180,255,0.1);
+      border-left: 3px solid var(--electric);
+      padding: 28px 28px;
+      border-radius: 2px;
+    }
+
+    .stat-number {
+      font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: var(--electric);
+      line-height: 1; margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .stat-desc { font-size: 13px; font-weight: 300; color: var(--muted); line-height: 1.6; }
+
+    /* CTA */
+    .hello-cta {
+      position: relative; z-index: 1;
+      padding: 80px 5%;
+      text-align: center;
+    }
+
+    .hello-cta h2 {
+      font-family: 'Bebas Neue', sans-serif; font-size: 52px; margin-bottom: 16px;
+    }
+
+    .hello-cta p {
+      font-size: 16px; font-weight: 300; color: var(--muted);
+      max-width: 460px; margin: 0 auto 36px; line-height: 1.7;
+    }
+
+    .btn-primary {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px;
+      letter-spacing: 2.5px; text-transform: uppercase; background: var(--electric);
+      color: var(--navy); padding: 16px 36px; text-decoration: none; border-radius: 2px;
+      display: inline-block; transition: box-shadow 0.2s;
+    }
+    .btn-primary:hover { box-shadow: 0 0 30px rgba(0,180,255,0.4); }
+
+    footer {
+      background: #050810; padding: 32px 5%;
+      border-top: 1px solid rgba(0,180,255,0.08);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    footer p { font-size: 12px; color: rgba(240,244,255,0.25); }
+    footer a { color: rgba(240,244,255,0.25); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .story-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="logo-mark">
+        <span class="lg-A">A</span>
+        <div class="I-stack"><span class="lg-I">I</span><span class="sm-i">i</span></div>
+        <span class="sm-s">s</span>
+      </div>
+      <div class="nav-divider"></div>
+      <div class="nav-name">
+        <span class="nav-name-line1">The AI Integration</span>
+        <span class="nav-name-line2">Specialists</span>
+      </div>
+    </a>
+    <a href="/" class="nav-back">← Back to Home</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-eyebrow">Hello — Nice to Meet You</div>
+    <h1 class="page-title">What We Do<br><span style="color:var(--electric)">In 90 Seconds</span></h1>
+    <p class="page-sub">A quick intro to The AI Integration Specialists and how we help small businesses put AI to work.</p>
+  </div>
+
+  <div class="video-section">
+    <div class="video-wrapper">
+      <div class="video-placeholder">
+        <div class="video-play">▶</div>
+        <div class="video-placeholder-text">Video Coming Soon</div>
+      </div>
+      <p class="video-caption">A 90-second overview of what AIIS does and how to get started — filmed in Richmond, TX</p>
+    </div>
+  </div>
+
+  <div class="story-section">
+    <div class="story-grid">
+      <div class="story-body">
+        <div class="section-label">Our Story</div>
+        <h2 class="story-title">Built From Curiosity</h2>
+        <p>I started coding at 19 with zero formal training when my dad brought home a 6-channel PLC demo unit. I programmed it to run a drag strip Christmas tree light system and a lane winner indicator for my slot car track. That same curiosity — across BASIC, FORTRAN, COBOL, LUA, and C# over three decades — is what built this business.</p>
+        <p>I spent years in <strong>oil and gas</strong>, working away from home. My wife convinced me to pursue software full time so I'd be around more. Best decision we ever made.</p>
+        <p>The AI Integration Specialists was conceived while cleaning the cat litter boxes. <strong>The best ideas come from the most unglamorous moments.</strong></p>
+        <p>We're based in <strong>Richmond, Texas</strong> — Fort Bend County — and we serve businesses right here in our backyard. When you call us, you talk to the person who built your system.</p>
+      </div>
+      <div class="story-stats">
+        <div class="stat-card">
+          <div class="stat-number">34</div>
+          <div class="stat-label">Years of Coding Experience</div>
+          <p class="stat-desc">Started at 19, zero formal training. Just curiosity and a PLC demo unit.</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">$200</div>
+          <div class="stat-label">Starting Monthly Plan</div>
+          <p class="stat-desc">Starter automation from $200/month — affordable, managed by Chad, and built to grow with your business.</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">Local</div>
+          <div class="stat-label">Fort Bend + Harris County</div>
+          <p class="stat-desc">We're in your market, serving your neighbors. This isn't remote consulting — we show up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hello-cta">
+    <h2>Ready to Talk?</h2>
+    <p>No pitch. Just five minutes about what's hardest about running your business. We'll tell you honestly if AI can help.</p>
+    <a href="/#contact" class="btn-primary">Start the Conversation</a>
+  </div>
+
+  <footer>
+    <p>© 2026 The AI Integration Specialists LLC — Richmond, TX</p>
+    <p><a href="mailto:info@theaiis.com">info@theaiis.com</a></p>
+  </footer>
+
+</body>
+</html>

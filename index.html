@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AI Integration Specialists — Small Business Automation | Fort Bend & Harris County, TX</title>
+  <meta name="description" content="Chad Galloway brings practical AI automation to small businesses in Fort Bend and Harris County. Affordable monthly plans, no cloud lock-in, local on-site support. AI IS the future. We make it yours.">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&family=Barlow+Condensed:wght@300;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:        #06090f;
+      --navy-mid:    #0b1220;
+      --navy-card:   #0e1828;
+      --navy-blue:   #0d2b6e;
+      --electric:    #00b4ff;
+      --electric-dim: rgba(0,180,255,0.07);
+      --electric-glow: rgba(0,180,255,0.22);
+      --white:       #eef3ff;
+      --muted:       rgba(238,243,255,0.48);
+      --border:      rgba(0,180,255,0.1);
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content:'';
+      position:fixed; inset:0; pointer-events:none; z-index:0;
+      background-image:
+        linear-gradient(rgba(0,180,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,180,255,0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:200;
+      height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      background: rgba(6,9,15,0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo { display:flex; align-items:center; gap:14px; text-decoration:none; }
+    .lm { display:flex; align-items:flex-end; line-height:1; }
+    .lm-A, .lm-I {
+      font-family:'Bebas Neue',sans-serif; font-size:40px;
+      color:#1840a8; letter-spacing:-1px;
+      text-shadow: 2px 2px 0 #0f2870, 3px 3px 0 #0a1a50, 4px 4px 8px rgba(0,0,0,.9);
+    }
+    .lm-stack { position:relative; font-family:'Bebas Neue',sans-serif; font-size:40px; line-height:1; }
+    .lm-si {
+      position:absolute; bottom:3px; left:50%; transform:translateX(-50%);
+      font-family:'Bebas Neue',sans-serif; font-size:17px; color:#00d4ff; z-index:5;
+      text-shadow: 0 0 8px rgba(0,212,255,.9), 0 0 20px rgba(0,212,255,.5);
+    }
+    .lm-ss {
+      font-family:'Bebas Neue',sans-serif; font-size:17px; color:#00d4ff;
+      align-self:flex-end; margin-bottom:3px; margin-left:1px;
+      text-shadow: 0 0 8px rgba(0,212,255,.7);
+    }
+    .nav-pipe { width:1px; height:26px; background: linear-gradient(to bottom, transparent, #00b4ff 40%, #00b4ff 60%, transparent); }
+    .nav-name { display:flex; flex-direction:column; gap:1px; }
+    .nav-n1 { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:10.5px; letter-spacing:3px; color:#4a7fd4; text-transform:uppercase; }
+    .nav-n2 { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:8.5px; letter-spacing:4px; color:#00d4ff; text-transform:uppercase; }
+
+    .nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+    .nav-links a { font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color .2s; }
+    .nav-links a:hover { color:var(--electric); }
+    .nav-cta-btn { color:var(--electric) !important; border:1px solid rgba(0,180,255,.35); padding:8px 18px; border-radius:1px; transition: background .2s !important; }
+    .nav-cta-btn:hover { background:var(--electric-dim); }
+
+    /* HERO */
+    .hero {
+      position:relative; z-index:1;
+      min-height: 100vh;
+      display:grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 100px 5% 80px;
+      gap: 60px;
+      overflow:hidden;
+    }
+    .hero::before {
+      content:''; position:absolute; top:-100px; left:-100px;
+      width:700px; height:700px;
+      background: radial-gradient(circle, rgba(0,80,200,.12) 0%, transparent 65%);
+      pointer-events:none;
+    }
+
+    .hero-left { position:relative; z-index:2; }
+
+    .hero-eyebrow {
+      display:inline-flex; align-items:center; gap:10px;
+      font-family:'Barlow Condensed',sans-serif; font-weight:600;
+      font-size:11px; letter-spacing:3.5px; text-transform:uppercase;
+      color:var(--electric); margin-bottom:28px;
+    }
+    .hero-eyebrow::before { content:''; display:inline-block; width:28px; height:1px; background:var(--electric); }
+
+    .hero-headline {
+      font-family:'Bebas Neue',sans-serif;
+      font-size: clamp(60px, 7vw, 96px);
+      line-height:.92; letter-spacing:.5px; margin-bottom:28px;
+    }
+    .hl-dim  { color: rgba(238,243,255,.72); }
+    .hl-main { color: var(--white); }
+    .hl-blue { color: var(--electric); text-shadow: 0 0 50px rgba(0,180,255,.35); }
+
+    .hero-sub { font-size:17px; font-weight:300; line-height:1.75; color:var(--muted); max-width:480px; margin-bottom:36px; }
+    .hero-sub strong { color:var(--white); font-weight:600; }
+
+    .hero-meta { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+    .hero-meta-item { display:flex; align-items:center; gap:8px; font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+    .hero-meta-item .dot { width:5px; height:5px; background:var(--electric); border-radius:50%; }
+
+    /* FORM CARD */
+    .hero-form-card {
+      position:relative; z-index:2;
+      background: var(--navy-card);
+      border:1px solid var(--border); border-radius:2px;
+      padding: 44px 40px;
+      box-shadow: 0 32px 80px rgba(0,0,0,.5);
+    }
+    .hero-form-card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background: linear-gradient(90deg, transparent, var(--electric), transparent);
+    }
+    .form-headline { font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--white); margin-bottom:6px; }
+    .form-sub { font-size:13px; font-weight:300; color:var(--muted); margin-bottom:28px; line-height:1.6; }
+
+    .hform { display:flex; flex-direction:column; gap:14px; }
+    .fg { display:flex; flex-direction:column; gap:5px; }
+    .fg label { font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:9.5px; letter-spacing:2.5px; text-transform:uppercase; color:var(--muted); }
+    .fg input, .fg select, .fg textarea {
+      background: rgba(6,9,15,.6); border: 1px solid rgba(0,180,255,.12);
+      color: var(--white); font-family:'Barlow',sans-serif; font-size:14px; font-weight:300;
+      padding: 12px 14px; border-radius:1px; outline:none; transition: border-color .2s; width:100%;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--electric); }
+    .fg input::placeholder, .fg textarea::placeholder { color:rgba(238,243,255,.25); }
+    .fg select option { background: var(--navy-mid); }
+    .fg textarea { min-height:90px; resize:vertical; }
+    .frow { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+
+    .btn-electric {
+      font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:12px; letter-spacing:2.5px; text-transform:uppercase;
+      background: var(--electric); color: var(--navy);
+      padding:14px 28px; border:none; border-radius:1px; cursor:pointer;
+      transition: box-shadow .2s, transform .15s;
+      display:inline-flex; align-items:center; gap:8px; width:100%; justify-content:center;
+      text-decoration:none;
+    }
+    .btn-electric:hover { box-shadow: 0 0 30px rgba(0,180,255,.4); transform: translateY(-1px); }
+
+    .form-privacy { font-size:11px; font-weight:300; color:rgba(238,243,255,.22); line-height:1.5; text-align:center; margin-top:4px; }
+
+    /* TRUST BAR */
+    .trust-bar {
+      position:relative; z-index:1;
+      background: var(--navy-blue);
+      border-top:1px solid rgba(255,255,255,.05);
+      border-bottom:1px solid rgba(0,180,255,.12);
+      padding: 22px 5%;
+      display:flex; align-items:center; gap:48px; flex-wrap:wrap;
+    }
+    .trust-label { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(238,243,255,.3); white-space:nowrap; }
+    .trust-items { display:flex; gap:40px; flex-wrap:wrap; }
+    .trust-item { font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:rgba(238,243,255,.4); display:flex; align-items:center; gap:8px; }
+
+    /* SECTIONS */
+    section { position:relative; z-index:1; padding: 96px 5%; }
+    .alt-bg { background: var(--navy-mid); }
+
+    .sec-eyebrow { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--electric); margin-bottom:14px; display:flex; align-items:center; gap:12px; }
+    .sec-eyebrow::before { content:''; display:inline-block; width:22px; height:1px; background:var(--electric); }
+    .sec-title { font-family:'Bebas Neue',sans-serif; font-size: clamp(40px, 4.5vw, 60px); line-height:1; margin-bottom:14px; }
+    .sec-sub { font-size:16px; font-weight:300; color:var(--muted); line-height:1.75; max-width:580px; margin-bottom:56px; }
+
+    /* OUTCOMES */
+    .outcomes-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+    .outcome-card { background: var(--navy-card); padding:44px 36px; position:relative; overflow:hidden; }
+    .outcome-card::after { content:''; position:absolute; top:0; left:0; right:0; height:2px; background: var(--electric); transform:scaleX(0); transform-origin:left; transition: transform .35s; }
+    .outcome-card:hover::after { transform:scaleX(1); }
+    .outcome-icon { width:52px; height:52px; border:1px solid rgba(0,180,255,.2); border-radius:2px; display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:22px; background: var(--electric-dim); }
+    .outcome-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:19px; letter-spacing:.5px; text-transform:uppercase; color:var(--white); margin-bottom:10px; }
+    .outcome-desc { font-size:14px; font-weight:300; color:var(--muted); line-height:1.7; }
+    .outcomes-cta { margin-top:48px; display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+    .btn-ghost { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--white); padding:13px 28px; border:1px solid rgba(238,243,255,.18); border-radius:1px; text-decoration:none; transition: border-color .2s, color .2s; display:inline-flex; align-items:center; gap:8px; }
+    .btn-ghost:hover { border-color:var(--electric); color:var(--electric); }
+    .btn-link { font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--electric); text-decoration:none; display:inline-flex; align-items:center; gap:6px; transition:gap .2s; }
+    .btn-link:hover { gap:10px; }
+
+    /* CAPABILITIES */
+    .cap-intro p { font-size:18px; font-weight:300; color:var(--muted); line-height:1.75; margin-bottom:56px; max-width:700px; }
+    .cap-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .cap-card { background: var(--navy-card); border:1px solid var(--border); padding:36px 28px; border-radius:1px; transition: border-color .3s, transform .3s; position:relative; overflow:hidden; }
+    .cap-card:hover { border-color:rgba(0,180,255,.3); transform:translateY(-3px); }
+    .cap-card::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at top left, var(--electric-dim), transparent 55%); opacity:0; transition: opacity .3s; }
+    .cap-card:hover::before { opacity:1; }
+    .cap-num { font-family:'Bebas Neue',sans-serif; font-size:11px; letter-spacing:3px; color:var(--electric); margin-bottom:16px; }
+    .cap-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; text-transform:uppercase; letter-spacing:.5px; color:var(--white); margin-bottom:10px; }
+    .cap-desc { font-size:14px; font-weight:300; color:var(--muted); line-height:1.7; }
+
+    /* BENEFITS */
+    .benefits-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .benefit-item { display:flex; gap:20px; align-items:flex-start; padding-bottom:28px; margin-bottom:28px; border-bottom:1px solid rgba(0,180,255,.07); }
+    .benefit-item:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+    .benefit-num { flex-shrink:0; width:34px; height:34px; border:1px solid var(--electric); border-radius:1px; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:15px; color:var(--electric); margin-top:2px; }
+    .benefit-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:16px; letter-spacing:1px; text-transform:uppercase; color:var(--white); margin-bottom:6px; }
+    .benefit-desc { font-size:14px; font-weight:300; color:var(--muted); line-height:1.7; }
+    .benefits-image img { width:100%; border-radius:2px; border:1px solid rgba(0,180,255,.12); opacity:.7; }
+
+    /* HOW IT WORKS */
+    .hiw-intro p { font-size:17px; font-weight:300; color:var(--muted); line-height:1.75; max-width:620px; margin-bottom:56px; }
+    .hiw-steps { display:flex; flex-direction:column; }
+    .hiw-step { display:grid; grid-template-columns:80px 1fr; gap:32px; align-items:start; padding: 40px 0; border-bottom:1px solid rgba(0,180,255,.07); }
+    .hiw-step:last-child { border-bottom:none; }
+    .hiw-step-num { font-family:'Bebas Neue',sans-serif; font-size:72px; line-height:1; color:rgba(0,180,255,.06); position:relative; }
+    .hiw-step-num::after { content: attr(data-n); position:absolute; top:6px; left:0; font-size:13px; color:var(--electric); letter-spacing:2px; font-family:'Barlow Condensed',sans-serif; font-weight:700; }
+    .hiw-step-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:22px; letter-spacing:.5px; text-transform:uppercase; color:var(--white); margin-bottom:8px; margin-top:8px; }
+    .hiw-step-desc { font-size:15px; font-weight:300; color:var(--muted); line-height:1.75; }
+
+    /* FAQ */
+    .faq-list { display:flex; flex-direction:column; max-width:860px; }
+    .faq-item { border-bottom:1px solid rgba(0,180,255,.08); overflow:hidden; }
+    .faq-q { width:100%; background:none; border:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; padding:26px 0; gap:20px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:17px; letter-spacing:.5px; text-transform:uppercase; color:var(--white); text-align:left; transition:color .2s; }
+    .faq-q:hover { color:var(--electric); }
+    .faq-arrow { flex-shrink:0; width:28px; height:28px; border:1px solid rgba(0,180,255,.25); border-radius:1px; display:flex; align-items:center; justify-content:center; font-size:16px; color:var(--electric); transition: transform .3s, background .2s; }
+    .faq-item.open .faq-arrow { transform:rotate(45deg); background:var(--electric-dim); }
+    .faq-a { max-height:0; overflow:hidden; font-size:15px; font-weight:300; color:var(--muted); line-height:1.75; transition: max-height .35s ease, padding .35s ease; }
+    .faq-item.open .faq-a { max-height:300px; padding-bottom:24px; }
+
+    /* BOTTOM CTA */
+    .cta-section { background: linear-gradient(135deg, #0a1635 0%, #061030 100%); border-top:1px solid rgba(0,180,255,.1); }
+    .cta-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+    .cta-left .sec-title { margin-bottom:20px; }
+    .cta-left p { font-size:16px; font-weight:300; color:var(--muted); line-height:1.75; margin-bottom:36px; }
+    .cta-promise { display:flex; flex-direction:column; gap:14px; }
+    .cta-promise-item { display:flex; align-items:center; gap:12px; font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--white); }
+    .cta-promise-item::before { content:'✓'; color:var(--electric); font-size:14px; font-weight:700; }
+    .cta-form-card { background: var(--navy-card); border:1px solid var(--border); border-radius:1px; padding:40px 36px; position:relative; overflow:hidden; }
+    .cta-form-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background: linear-gradient(90deg, transparent, var(--electric), transparent); }
+
+    /* FOOTER */
+    footer { background:#030508; border-top:1px solid rgba(0,180,255,.07); padding:60px 5% 36px; }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:60px; margin-bottom:48px; }
+    .footer-brand p { font-size:13px; font-weight:300; color:rgba(238,243,255,.28); line-height:1.7; margin-top:16px; max-width:280px; }
+    .footer-col h4 { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:9.5px; letter-spacing:3px; text-transform:uppercase; color:var(--electric); margin-bottom:18px; }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .footer-col a { font-size:13px; font-weight:300; color:rgba(238,243,255,.32); text-decoration:none; transition:color .2s; }
+    .footer-col a:hover { color:var(--electric); }
+    .footer-bottom { border-top:1px solid rgba(238,243,255,.05); padding-top:28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+    .footer-bottom p, .footer-bottom a { font-size:11px; color:rgba(238,243,255,.18); text-decoration:none; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+    .hero-left > * { animation: fadeUp .65s ease both; }
+    .hero-eyebrow  { animation-delay:.05s; }
+    .hero-headline { animation-delay:.15s; }
+    .hero-sub      { animation-delay:.28s; }
+    .hero-meta     { animation-delay:.40s; }
+    .hero-form-card { animation: fadeUp .65s .1s ease both; }
+
+    /* RESPONSIVE */
+    @media (max-width:1000px) {
+      .hero { grid-template-columns:1fr; min-height:auto; padding:100px 5% 60px; }
+      .outcomes-grid { grid-template-columns:1fr 1fr; }
+      .cap-grid { grid-template-columns:1fr 1fr; }
+      .benefits-grid { grid-template-columns:1fr; }
+      .benefits-image { display:none; }
+      .cta-grid { grid-template-columns:1fr; }
+      .footer-top { grid-template-columns:1fr; gap:36px; }
+    }
+    @media (max-width:640px) {
+      .outcomes-grid, .cap-grid { grid-template-columns:1fr; }
+      .nav-links { display:none; }
+      .frow { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="lm">
+      <span class="lm-A">A</span>
+      <div class="lm-stack"><span class="lm-I">I</span><span class="lm-si">i</span></div>
+      <span class="lm-ss">s</span>
+    </div>
+    <div class="nav-pipe"></div>
+    <div class="nav-name">
+      <span class="nav-n1">The AI Integration</span>
+      <span class="nav-n2">Specialists</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#outcomes">Services</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="/dynamicgm">Dynamic GM</a></li>
+    <li><a href="#contact" class="nav-cta-btn">Get Started ↗</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Fort Bend &amp; Harris County, Texas</div>
+    <h1 class="hero-headline">
+      <span class="hl-dim">Small Business</span><br>
+      <span class="hl-main">Automation</span><br>
+      <span class="hl-blue">Made Simple.</span>
+    </h1>
+    <p class="hero-sub">
+      <strong>Chad Galloway</strong> brings practical AI automation to small businesses — eliminating the repetitive work that eats your day, with affordable monthly plans, no cloud lock-in, and local on-site support from someone who actually knows your business.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><div class="dot"></div>Affordable Monthly Plans</div>
+      <div class="hero-meta-item"><div class="dot"></div>No Cloud Lock-In</div>
+      <div class="hero-meta-item"><div class="dot"></div>Local, On-Site Support</div>
+    </div>
+  </div>
+
+  <div class="hero-form-card">
+    <div class="form-headline">Get Started.</div>
+    <p class="form-sub">Tell us about your business and we'll reach out within one business day to schedule a free conversation.</p>
+    <form class="hform" action="mailto:info@theaiis.com" method="get">
+      <div class="frow">
+        <div class="fg"><label for="h-name">Your Name</label><input type="text" id="h-name" name="name" placeholder="Jane Smith"></div>
+        <div class="fg"><label for="h-biz">Business Name</label><input type="text" id="h-biz" name="business" placeholder="Smith's Café"></div>
+      </div>
+      <div class="fg"><label for="h-email">Email Address</label><input type="email" id="h-email" name="email" placeholder="jane@yourbusiness.com"></div>
+      <div class="fg"><label for="h-phone">Phone (Optional)</label><input type="tel" id="h-phone" name="phone" placeholder="(281) 555-0100"></div>
+      <div class="fg">
+        <label for="h-interest">What Are You Most Interested In?</label>
+        <select id="h-interest" name="interest">
+          <option value="">Select a service area...</option>
+          <option>Automation Essentials — reviews, reminders, social</option>
+          <option>AI Menu Management — restaurants</option>
+          <option>Sweepstakes + Customer Retention AI</option>
+          <option>Local AI Hardware — data stays on-site</option>
+          <option>Not Sure — Just Want to Talk</option>
+        </select>
+      </div>
+      <div class="fg"><label for="h-msg">What's Taking Up Too Much of Your Time?</label><textarea id="h-msg" name="body" placeholder="The more you tell us, the better we can help..."></textarea></div>
+      <button type="submit" class="btn-electric">Start the Conversation &nbsp;→</button>
+      <p class="form-privacy">By submitting you agree to be contacted about AIIS services. We never sell your information.</p>
+    </form>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar" style="position:relative;z-index:1;">
+  <span class="trust-label">Serving</span>
+  <div class="trust-items">
+    <div class="trust-item">🍽&nbsp; Restaurants</div>
+    <div class="trust-item">🛍&nbsp; Retail</div>
+    <div class="trust-item">💇&nbsp; Salons &amp; Spas</div>
+    <div class="trust-item">🔧&nbsp; Service Businesses</div>
+    <div class="trust-item">🏥&nbsp; Medical Offices</div>
+    <div class="trust-item">⚙️&nbsp; Industrial &amp; Trades</div>
+  </div>
+</div>
+
+<!-- BUSINESS OUTCOMES -->
+<section id="outcomes">
+  <div class="sec-eyebrow">Business Outcomes</div>
+  <h2 class="sec-title">How Small Business Automation<br>Transforms Your Operation</h2>
+  <p class="sec-sub">You didn't start your business to spend your days on repetitive tasks. We automate the grind so you can focus on what actually grows it.</p>
+  <div class="outcomes-grid">
+    <div class="outcome-card">
+      <div class="outcome-icon">⏰</div>
+      <div class="outcome-title">Reclaim Your Time</div>
+      <p class="outcome-desc">Automated review requests, birthday offers, appointment reminders, and social posts — running on their own while you focus on your customers.</p>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-icon">🔄</div>
+      <div class="outcome-title">Turn One-Time Buyers Into Regulars</div>
+      <p class="outcome-desc">AI-driven retention workflows that use your existing customer data to bring people back — without you lifting a finger after setup.</p>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-icon">🔒</div>
+      <div class="outcome-title">Keep Your Data In Your Building</div>
+      <p class="outcome-desc">On-premise AI hardware options mean your customer information never leaves your property. No cloud. No third parties. No exposure.</p>
+    </div>
+  </div>
+  <div class="outcomes-cta">
+    <a href="#contact" class="btn-electric" style="width:auto;">Schedule a Free Conversation ↗</a>
+    <a href="#capabilities" class="btn-link">See Our Services →</a>
+  </div>
+</section>
+
+<!-- KEY CAPABILITIES -->
+<section class="alt-bg" id="capabilities">
+  <div class="sec-eyebrow">Key Capabilities</div>
+  <h2 class="sec-title">Automation Built for<br>Your Kind of Business</h2>
+  <div class="cap-intro"><p>A practical suite of AI services designed for small businesses — not enterprise software companies. Start with one. Add more as you grow.</p></div>
+  <div class="cap-grid">
+    <div class="cap-card">
+      <div class="cap-num">01 — Tier 1 · From $200/mo</div>
+      <div class="cap-title">Automation Essentials</div>
+      <p class="cap-desc">Birthday SMS offers, Google review requests, reorder reminders, AI-drafted social content, and a website chatbot that answers questions 24/7. Runs on AIIS infrastructure — we manage everything.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-num">02 — Tier 2 · Custom Quote</div>
+      <div class="cap-title">AI Menu Management</div>
+      <p class="cap-desc">Built for restaurants. Automated seasonal updates, AI pricing suggestions, and sales analysis — so your menu actually reflects your business. Monthly managed service.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-num">03 — Tier 3 · Custom Quote</div>
+      <div class="cap-title">Sweepstakes + Retention</div>
+      <p class="cap-desc">Run compliant sweepstakes to grow your customer list, then feed that data into AI-powered loyalty and retention workflows. Ongoing monthly management included.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-num">04 — Tier 4 · Monthly Retainer</div>
+      <div class="cap-title">Local AI Hardware</div>
+      <p class="cap-desc">We deploy AI on hardware at your location — your customer data never leaves the building. Monthly retainer covers maintenance and monitoring. For businesses where data privacy isn't optional.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-num">05 — Enterprise · One-Time</div>
+      <div class="cap-title">Complete In-House Solution</div>
+      <p class="cap-desc">Full turnkey deployment — hardware, software, workflows, and training. Fully yours, fully independent, no ongoing fees. Built for businesses ready to own their AI infrastructure outright. <em style="color:var(--electric)">Ask us about this option.</em></p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-num">06 — Coming Soon · One-Time Purchase</div>
+      <div class="cap-title">Dynamic GM</div>
+      <p class="cap-desc">Our flagship software product — an AI Game Master for tabletop RPG. <strong style="color:var(--electric)">One-time purchase, no subscription.</strong> Proof that AIIS ships real software, not just consulting decks.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-num">07 — Future</div>
+      <div class="cap-title">Industrial &amp; Oil + Gas</div>
+      <p class="cap-desc">Small ecosystem companies running on spreadsheets. Chad's oil and gas background combined with software skills is an extremely rare combination.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="why-us">
+  <div class="sec-eyebrow">Benefits</div>
+  <h2 class="sec-title">Why Small Businesses<br>Choose AIIS</h2>
+  <p class="sec-sub">We're not a software company selling you a platform. We're a local business that builds custom solutions for other local businesses.</p>
+  <div class="benefits-grid">
+    <div>
+      <div class="benefit-item">
+        <div class="benefit-num">01</div>
+        <div>
+          <div class="benefit-title">Flexible Plans That Fit Your Budget</div>
+          <p class="benefit-desc">Starter automation begins at $200/month. We scale with you — adding services as your business grows and as you see results from what's already running.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-num">02</div>
+        <div>
+          <div class="benefit-title">You Talk to the Person Who Built It</div>
+          <p class="benefit-desc">No support tickets, no call centers. When something needs attention, Chad handles it directly. That's the advantage of working local.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-num">03</div>
+        <div>
+          <div class="benefit-title">Your Data Stays Yours</div>
+          <p class="benefit-desc">On-premise deployment options mean your customer list never leaves your building. Try getting that promise from a SaaS company.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-num">04</div>
+        <div>
+          <div class="benefit-title">Start Small, Grow When Ready</div>
+          <p class="benefit-desc">Most clients begin with one automation and expand as they see results. No big upfront commitment required to get started.</p>
+        </div>
+      </div>
+    </div>
+    <div class="benefits-image">
+      <img src="assets/consultation.jpg" alt="Chad Galloway consulting with a small business owner">
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="alt-bg" id="how-it-works">
+  <div class="sec-eyebrow">How It Works</div>
+  <h2 class="sec-title">How AIIS Integrates Into<br>Your Business</h2>
+  <div class="hiw-intro"><p>We don't drop a platform on your doorstep and leave. We learn your operation first, then build automations that fit the way you already work.</p></div>
+  <div class="hiw-steps">
+    <div class="hiw-step">
+      <div class="hiw-step-num" data-n="01">01</div>
+      <div>
+        <div class="hiw-step-title">We Listen First — No Pitch</div>
+        <p class="hiw-step-desc">Our approach is simple: "Do you have five minutes? I'm trying to learn what's hardest about running your business. I promise I won't try to sell you anything." We mean it. The first conversation is about understanding your operation — not closing a deal.</p>
+      </div>
+    </div>
+    <div class="hiw-step">
+      <div class="hiw-step-num" data-n="02">02</div>
+      <div>
+        <div class="hiw-step-title">We Identify the Right Starting Point</div>
+        <p class="hiw-step-desc">Based on what we learn, we recommend the one automation that will have the most immediate impact. For most businesses, that's review request automation or a birthday offer campaign — simple, fast, and measurable from day one.</p>
+      </div>
+    </div>
+    <div class="hiw-step">
+      <div class="hiw-step-num" data-n="03">03</div>
+      <div>
+        <div class="hiw-step-title">We Build It and Make It Run</div>
+        <p class="hiw-step-desc">No templates handed off to you. We build the automation, configure it for your business, connect it to your existing systems, and make sure it works before we leave. You don't have to learn anything new.</p>
+      </div>
+    </div>
+    <div class="hiw-step">
+      <div class="hiw-step-num" data-n="04">04</div>
+      <div>
+        <div class="hiw-step-title">It Runs — and We Stay Close</div>
+        <p class="hiw-step-desc">We stay available, monitor what we've built, and expand your system as your business grows. Most clients add a second or third service within six months of seeing the first one work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="sec-eyebrow">FAQs</div>
+  <h2 class="sec-title">Common Questions</h2>
+  <p class="sec-sub">Plain answers to what people usually want to know before they reach out.</p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">What does the monthly fee cover?<span class="faq-arrow">+</span></button>
+      <div class="faq-a">Your monthly plan covers hosting your automations on AIIS infrastructure, ongoing management and monitoring, updates as platforms change, and direct access to Chad when something needs attention. You're not just paying for software — you're paying for someone to keep it running and working for your business month after month.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">How is this different from tools like Mailchimp or HubSpot?<span class="faq-arrow">+</span></button>
+      <div class="faq-a">Those tools are built for marketing teams with time to learn them. We build custom workflows tailored to your specific business and run them so you don't have to learn anything new or hire anyone to manage them.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">What does "local AI hardware" mean — do I need it?<span class="faq-arrow">+</span></button>
+      <div class="faq-a">It means running AI on a computer in your building instead of sending your data to a cloud server. Most small businesses don't need it for basic automations. But for businesses with sensitive customer data — medical, legal, financial — or those who simply don't want their customer list on someone else's servers, it's a strong option.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">How much does this cost?<span class="faq-arrow">+</span></button>
+      <div class="faq-a">Starter automation packages run $200–$500/month for ongoing management. Custom projects are quoted based on scope. We're built for small business budgets — not enterprise contracts. The first conversation is always free.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">What area do you serve?<span class="faq-arrow">+</span></button>
+      <div class="faq-a">We're based in Richmond, Texas and primarily serve Fort Bend and Harris County. We prefer working with businesses where we can show up in person — that's the whole point of being a local specialist rather than a remote SaaS vendor.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">Do I need to know anything about AI or technology?<span class="faq-arrow">+</span></button>
+      <div class="faq-a">No. Our whole value proposition is that you don't have to. You run your business — we handle the technical side. If we can't explain what we're doing in plain English, we're not doing our job right.</div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA + FORM -->
+<section class="alt-bg cta-section" id="contact">
+  <div class="cta-grid">
+    <div class="cta-left">
+      <div class="sec-eyebrow">Schedule a Conversation</div>
+      <h2 class="sec-title">Ready to See What AI Can Do for Your Business?</h2>
+      <p>Our process starts with listening — not pitching. Tell us what's hardest about running your business and we'll tell you honestly if automation can help.</p>
+      <div class="cta-promise">
+        <div class="cta-promise-item">Affordable monthly plans from $200/mo</div>
+        <div class="cta-promise-item">No cloud lock-in — options to keep data local</div>
+        <div class="cta-promise-item">Local, on-site support — you talk to Chad directly</div>
+        <div class="cta-promise-item">Serving Fort Bend &amp; Harris County</div>
+      </div>
+    </div>
+    <div class="cta-form-card">
+      <div class="form-headline">Get Started.</div>
+      <p class="form-sub">We'll reach out to schedule a free 30-minute conversation.</p>
+      <form class="hform" action="mailto:info@theaiis.com" method="get">
+        <div class="frow">
+          <div class="fg"><label for="c-name">Name</label><input type="text" id="c-name" name="name" placeholder="Your name"></div>
+          <div class="fg"><label for="c-biz">Business</label><input type="text" id="c-biz" name="business" placeholder="Business name"></div>
+        </div>
+        <div class="fg"><label for="c-email">Email</label><input type="email" id="c-email" name="email" placeholder="your@email.com"></div>
+        <div class="fg">
+          <label for="c-interest">Service Interest</label>
+          <select id="c-interest" name="interest">
+            <option value="">Select one...</option>
+            <option>Automation Essentials</option>
+            <option>AI Menu Management</option>
+            <option>Sweepstakes + Retention AI</option>
+            <option>Local AI Hardware</option>
+            <option>Not Sure — Let's Talk</option>
+          </select>
+        </div>
+        <div class="fg"><label for="c-msg">What's your biggest challenge right now?</label><textarea id="c-msg" name="body" placeholder="Tell us what's taking up too much of your time..."></textarea></div>
+        <button type="submit" class="btn-electric">Send Message &nbsp;→</button>
+        <p class="form-privacy">Subject to AIIS privacy practices. We never sell your information.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="lm">
+        <span class="lm-A" style="font-size:34px">A</span>
+        <div class="lm-stack" style="font-size:34px"><span class="lm-I">I</span><span class="lm-si" style="font-size:14px;bottom:2px">i</span></div>
+        <span class="lm-ss" style="font-size:14px;margin-bottom:2px">s</span>
+      </div>
+      <p>Practical AI automation for small businesses in Fort Bend and Harris County, Texas. Affordable monthly plans, no cloud lock-in, local on-site support.<br><br><em style="color:rgba(238,243,255,.18)">"AI IS the future. We make it yours."</em></p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#capabilities">Automation Essentials</a></li>
+        <li><a href="#capabilities">AI Menu Management</a></li>
+        <li><a href="#capabilities">Sweepstakes + Retention</a></li>
+        <li><a href="#capabilities">Local AI Hardware</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/hello">About Chad / Video</a></li>
+        <li><a href="/dynamicgm">Dynamic GM</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="mailto:info@theaiis.com">info@theaiis.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 The AI Integration Specialists LLC &nbsp;·&nbsp; Richmond, TX &nbsp;·&nbsp; EIN 41-4540376</p>
+    <p><a href="mailto:legal@theaiis.com">legal@theaiis.com</a></p>
+  </div>
+</footer>
+
+<script>
+  function toggleFAQ(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+</body>
+</html>
