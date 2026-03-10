@@ -154,7 +154,7 @@
     /* HOW IT WORKS */
     .how-section {
       position: relative; z-index: 1;
-      background: var(--navy-mid); padding: 100px 5%;
+      background: var(--navy-mid); padding: 60px 5%;
     }
 
     .section-label {
@@ -191,7 +191,7 @@
     .step-desc { font-size: 14px; font-weight: 300; color: var(--muted); line-height: 1.7; }
 
     /* FEATURES */
-    .features-section { position: relative; z-index: 1; padding: 100px 5%; }
+    .features-section { position: relative; z-index: 1; padding: 80px 5%; }
 
     .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 
@@ -215,7 +215,7 @@
     /* NOTIFY */
     .notify-section {
       position: relative; z-index: 1; background: var(--navy-mid);
-      padding: 80px 5%; text-align: center;
+      padding: 40px 5%; text-align: center;
     }
 
     .notify-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: 52px; margin-bottom: 16px; }
@@ -306,18 +306,17 @@
             </div>
         </div>
         <div class="hero-cta-note">🎲 No subscription. No cloud. No internet required.</div>
-        <div class="section-label" style="justify-content:center">Early Access</div>
-        <p>Dynamic GM is in active development. Drop your email and we'll let you know when early access opens.</p>
-        <form class="notify-form" name="notify-top" netlify action="/dynamicgm/notify-dynamicgm.html">
-            <input type="hidden" name="form-name" value="dynamicgm-notify" />
-            <input type="email" name="email" placeholder="your@email.com">
-            <button type="submit" class="btn-primary">Notify Me</button>
-        </form>
-    </section>
-
+        <br />
     <!-- NOTIFY TOP -->
-    <section class="notify-section">
-   
+        <section class="notify-section">
+            <div class="section-label" style="justify-content:center">Early Access</div>
+            <p>Dynamic GM is in active development. Drop your email and we'll let you know when early access opens.</p>
+            <form class="notify-form" name="notify-top" netlify action="/dynamicgm/notify-dynamicgm.html">
+                <input type="hidden" name="form-name" value="dynamicgm-notify" />
+                <input type="email" name="email" placeholder="your@email.com">
+                <button type="submit" class="btn-primary">Notify Me</button>
+            </form>
+        </section>
     </section>
 
     <!-- HOW IT WORKS -->
