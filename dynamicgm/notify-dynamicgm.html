@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're on the List — Dynamic GM</title>
+  <style>
+    /* ── Color constants ── */
+    :root {
+      --navy:          #06090f;
+      --navy-mid:      #0b1220;
+      --navy-card:     #0e1828;
+      --navy-blue:     #0d2b6e;
+      --electric:      #00b4ff;
+      --electric-dim:  rgba(0,180,255,0.07);
+      --electric-glow: rgba(0,180,255,0.22);
+      --white:         #eef3ff;
+      --muted:         rgba(238,243,255,0.48);
+      --border:        rgba(0,180,255,0.1);
+    }
+
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    /* ── Subtle grid background ── */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Card ── */
+    .card {
+      position: relative;
+      z-index: 1;
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 60px var(--electric-glow);
+    }
+
+    /* ── Product label ── */
+    .product-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--electric);
+      border: 1px solid var(--border);
+      background: var(--electric-dim);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── Dice icon ── */
+    .icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--electric-dim);
+      border: 2px solid var(--electric);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 0 24px var(--electric-glow);
+      font-size: 2rem;
+    }
+
+    /* ── Eyebrow ── */
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--electric);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── Heading ── */
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Body copy ── */
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    p strong {
+      color: var(--white);
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.75rem 0;
+    }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      display: inline-block;
+      background: var(--electric);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 16px var(--electric-glow);
+      margin-bottom: 0.75rem;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.88;
+      box-shadow: 0 0 28px var(--electric-glow);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      color: var(--electric);
+      font-size: 0.9rem;
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+
+    .btn-secondary:hover { text-decoration: underline; }
+
+    /* ── Footer note ── */
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-note a {
+      color: var(--electric);
+      text-decoration: none;
+    }
+
+    .footer-note a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- Product label -->
+    <div class="product-label">🎲 Dynamic GM — An AIIS Product</div>
+
+    <!-- Dice icon -->
+    <div class="icon">🎲</div>
+
+    <!-- Eyebrow -->
+    <div class="eyebrow">You're on the list</div>
+
+    <!-- Heading -->
+    <h1>Your seat at the table is saved.</h1>
+
+    <!-- Copy -->
+    <p>We'll reach out as soon as a testable build of <strong>Dynamic GM</strong> is available for early access.</p>
+    <p>You'll be among the first to roll dice with an AI Game Master — so your whole group can finally play together.</p>
+
+    <hr class="divider" />
+
+    <!-- CTAs -->
+    <a href="/dynamicgm" class="btn-primary">← Back to Dynamic GM</a>
+    <a href="/" class="btn-secondary">Visit AIIS →</a>
+
+    <!-- Footer note -->
+    <p class="footer-note">
+      Questions? Email us at
+      <a href="mailto:info@theaiis.com">info@theaiis.com</a>
+    </p>
+
+  </div>
+
+</body>
+</html>
