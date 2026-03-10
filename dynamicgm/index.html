@@ -379,9 +379,10 @@
     <div class="section-label" style="justify-content:center">Early Access</div>
     <h2>Be First to Know</h2>
     <p>Dynamic GM is in active development. Drop your email and we'll let you know when early access opens.</p>
-    <form class="notify-form" action="mailto:info@theaiis.com" method="get">
-      <input type="email" name="body" placeholder="your@email.com">
-      <button type="submit" class="btn-primary">Notify Me</button>
+    <form class="notify-form" name="dynamicgm-notify" netlify>
+        <input type="hidden" name="form-name" value="dynamicgm-notify" />
+        <input type="email" name="email" placeholder="your@email.com">
+        <button type="submit" class="btn-primary">Notify Me</button>
     </form>
   </section>
 

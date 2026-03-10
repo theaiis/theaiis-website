@@ -334,27 +334,28 @@
   <div class="hero-form-card">
     <div class="form-headline">Get Started.</div>
     <p class="form-sub">Tell us about your business and we'll reach out within one business day to schedule a free conversation.</p>
-    <form class="hform" action="mailto:info@theaiis.com" method="get">
-      <div class="frow">
-        <div class="fg"><label for="h-name">Your Name</label><input type="text" id="h-name" name="name" placeholder="Jane Smith"></div>
-        <div class="fg"><label for="h-biz">Business Name</label><input type="text" id="h-biz" name="business" placeholder="Smith's Café"></div>
-      </div>
-      <div class="fg"><label for="h-email">Email Address</label><input type="email" id="h-email" name="email" placeholder="jane@yourbusiness.com"></div>
-      <div class="fg"><label for="h-phone">Phone (Optional)</label><input type="tel" id="h-phone" name="phone" placeholder="(281) 555-0100"></div>
-      <div class="fg">
-        <label for="h-interest">What Are You Most Interested In?</label>
-        <select id="h-interest" name="interest">
-          <option value="">Select a service area...</option>
-          <option>Automation Essentials — reviews, reminders, social</option>
-          <option>AI Menu Management — restaurants</option>
-          <option>Sweepstakes + Customer Retention AI</option>
-          <option>Local AI Hardware — data stays on-site</option>
-          <option>Not Sure — Just Want to Talk</option>
-        </select>
-      </div>
-      <div class="fg"><label for="h-msg">What's Taking Up Too Much of Your Time?</label><textarea id="h-msg" name="body" placeholder="The more you tell us, the better we can help..."></textarea></div>
-      <button type="submit" class="btn-electric">Start the Conversation &nbsp;→</button>
-      <p class="form-privacy">By submitting you agree to be contacted about AIIS services. We never sell your information.</p>
+    <form class="hform" name="contact-top" netlify>
+        <input type="hidden" name="form-name" value="contact-top" />
+        <div class="frow">
+            <div class="fg"><label for="h-name">Your Name</label><input type="text" id="h-name" name="name" placeholder="Jane Smith"></div>
+            <div class="fg"><label for="h-biz">Business Name</label><input type="text" id="h-biz" name="business" placeholder="Smith's Café"></div>
+        </div>
+        <div class="fg"><label for="h-email">Email Address</label><input type="email" id="h-email" name="email" placeholder="jane@yourbusiness.com"></div>
+        <div class="fg"><label for="h-phone">Phone (Optional)</label><input type="tel" id="h-phone" name="phone" placeholder="(281) 555-0100"></div>
+        <div class="fg">
+            <label for="h-interest">What Are You Most Interested In?</label>
+            <select id="h-interest" name="interest">
+                <option value="">Select a service area...</option>
+                <option>Automation Essentials — reviews, reminders, social</option>
+                <option>AI Menu Management — restaurants</option>
+                <option>Sweepstakes + Customer Retention AI</option>
+                <option>Local AI Hardware — data stays on-site</option>
+                <option>Not Sure — Just Want to Talk</option>
+            </select>
+        </div>
+        <div class="fg"><label for="h-msg">What's Taking Up Too Much of Your Time?</label><textarea id="h-msg" name="body" placeholder="The more you tell us, the better we can help..."></textarea></div>
+        <button type="submit" class="btn-electric">Start the Conversation &nbsp;→</button>
+        <p class="form-privacy">By submitting you agree to be contacted about AIIS services. We never sell your information.</p>
     </form>
   </div>
 </section>
@@ -573,26 +574,27 @@
     <div class="cta-form-card">
       <div class="form-headline">Get Started.</div>
       <p class="form-sub">We'll reach out to schedule a free 30-minute conversation.</p>
-      <form class="hform" action="mailto:info@theaiis.com" method="get">
-        <div class="frow">
-          <div class="fg"><label for="c-name">Name</label><input type="text" id="c-name" name="name" placeholder="Your name"></div>
-          <div class="fg"><label for="c-biz">Business</label><input type="text" id="c-biz" name="business" placeholder="Business name"></div>
-        </div>
-        <div class="fg"><label for="c-email">Email</label><input type="email" id="c-email" name="email" placeholder="your@email.com"></div>
-        <div class="fg">
-          <label for="c-interest">Service Interest</label>
-          <select id="c-interest" name="interest">
-            <option value="">Select one...</option>
-            <option>Automation Essentials</option>
-            <option>AI Menu Management</option>
-            <option>Sweepstakes + Retention AI</option>
-            <option>Local AI Hardware</option>
-            <option>Not Sure — Let's Talk</option>
-          </select>
-        </div>
-        <div class="fg"><label for="c-msg">What's your biggest challenge right now?</label><textarea id="c-msg" name="body" placeholder="Tell us what's taking up too much of your time..."></textarea></div>
-        <button type="submit" class="btn-electric">Send Message &nbsp;→</button>
-        <p class="form-privacy">Subject to AIIS privacy practices. We never sell your information.</p>
+      <form name="contact-bottom" netlify>
+          <input type="hidden" name="form-name" value="contact-bottom" />
+          <div class="frow">
+              <div class="fg"><label for="c-name">Name</label><input type="text" id="c-name" name="name" placeholder="Your name"></div>
+              <div class="fg"><label for="c-biz">Business</label><input type="text" id="c-biz" name="business" placeholder="Business name"></div>
+          </div>
+          <div class="fg"><label for="c-email">Email</label><input type="email" id="c-email" name="email" placeholder="your@email.com"></div>
+          <div class="fg">
+              <label for="c-interest">Service Interest</label>
+              <select id="c-interest" name="interest">
+                  <option value="">Select one...</option>
+                  <option>Automation Essentials</option>
+                  <option>AI Menu Management</option>
+                  <option>Sweepstakes + Retention AI</option>
+                  <option>Local AI Hardware</option>
+                  <option>Not Sure — Let's Talk</option>
+              </select>
+          </div>
+          <div class="fg"><label for="c-msg">What's your biggest challenge right now?</label><textarea id="c-msg" name="body" placeholder="Tell us what's taking up too much of your time..."></textarea></div>
+          <button type="submit" class="btn-electric">Send Message &nbsp;→</button>
+          <p class="form-privacy">Subject to AIIS privacy practices. We never sell your information.</p>
       </form>
     </div>
   </div>
