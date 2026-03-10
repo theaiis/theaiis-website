@@ -265,135 +265,146 @@
 </head>
 <body>
 
-  <nav>
-    <a href="/" class="nav-logo">
-      <div class="logo-mark">
-        <span class="lg-A">A</span>
-        <div class="I-stack"><span class="lg-I">I</span><span class="sm-i">i</span></div>
-        <span class="sm-s">s</span>
-      </div>
-      <div class="nav-divider"></div>
-      <div class="nav-name">
-        <span class="nav-name-line1">The AI Integration</span>
-        <span class="nav-name-line2">Specialists</span>
-      </div>
-    </a>
-    <a href="/" class="nav-back">← Back to AIIS</a>
-  </nav>
+    <nav>
+        <a href="/" class="nav-logo">
+            <div class="logo-mark">
+                <span class="lg-A">A</span>
+                <div class="I-stack"><span class="lg-I">I</span><span class="sm-i">i</span></div>
+                <span class="sm-s">s</span>
+            </div>
+            <div class="nav-divider"></div>
+            <div class="nav-name">
+                <span class="nav-name-line1">The AI Integration</span>
+                <span class="nav-name-line2">Specialists</span>
+            </div>
+        </a>
+        <a href="/" class="nav-back">← Back to AIIS</a>
+    </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-glow"></div>
-    <div class="dgm-badge"><span>🎲 &nbsp;An AIIS Product — Coming Soon</span></div>
-    <h1 class="hero-title">
-      <span class="dynamic">DYNAMIC</span><br>
-      <span class="gm">GM</span>
-    </h1>
-    <div class="hero-tagline">Everyone Gets to Play</div>
-    <p class="hero-sub">
-      In every small tabletop RPG group, someone always has to be the Game Master — and can't play. Dynamic GM changes that. AI runs the table so your whole group rolls dice as adventurers.
-    </p>
-    <div class="pricing-pills">
-      <div class="pill">
-        <div class="pill-price">$5</div>
-        <div class="pill-label">Phone App</div>
-        <div class="pill-sub">Per player · Android first</div>
-      </div>
-      <div class="pill">
-        <div class="pill-price">$40</div>
-        <div class="pill-label">Server Tool</div>
-        <div class="pill-sub">One-time · Group organizer</div>
-      </div>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-glow"></div>
+        <div class="dgm-badge"><span>🎲 &nbsp;An AIIS Product — Coming Soon</span></div>
+        <h1 class="hero-title">
+            <span class="dynamic">DYNAMIC</span><br>
+            <span class="gm">GM</span>
+        </h1>
+        <div class="hero-tagline">Everyone Gets to Play</div>
+        <p class="hero-sub">
+            In every small tabletop RPG group, someone always has to be the Game Master — and can't play. Dynamic GM changes that. AI runs the table so your whole group rolls dice as adventurers.
+        </p>
+        <div class="pricing-pills">
+            <div class="pill">
+                <div class="pill-price">$5</div>
+                <div class="pill-label">Phone App</div>
+                <div class="pill-sub">Per player · Android first</div>
+            </div>
+            <div class="pill">
+                <div class="pill-price">$40</div>
+                <div class="pill-label">Server Tool</div>
+                <div class="pill-sub">One-time · Group organizer</div>
+            </div>
+        </div>
+        <div class="hero-cta-note">🎲 No subscription. No cloud. No internet required.</div>
+    </section>
+
+    <!-- NOTIFY TOP -->
+    <section class="notify-section">
+        <div class="section-label" style="justify-content:center">Early Access</div>
+        <p>Dynamic GM is in active development. Drop your email and we'll let you know when early access opens.</p>
+        <form class="notify-form" name="notify-top" netlify action="/dynamicgm/notify-dynamicgm.html">
+            <input type="hidden" name="form-name" value="dynamicgm-notify" />
+            <input type="email" name="email" placeholder="your@email.com">
+            <button type="submit" class="btn-primary">Notify Me</button>
+        </form>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">Setup in Minutes.<br>Adventure in Seconds.</h2>
+        <p class="section-sub">Dynamic GM runs entirely on your local network. No accounts, no cloud, no monthly fees — just your group and the game.</p>
+        <div class="steps-grid">
+            <div class="step-card">
+                <span class="step-num">01</span>
+                <div class="step-icon">💻</div>
+                <div class="step-title">Organizer Installs the Server</div>
+                <p class="step-desc">One person installs the $40 server tool on their laptop. It takes a few minutes and sets itself up. No technical knowledge required.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-num">02</span>
+                <div class="step-icon">📱</div>
+                <div class="step-title">Players Join on Their Phones</div>
+                <p class="step-desc">Everyone else opens the $5 app and connects to the local game. No accounts, no sign-in. Just connect and play.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-num">03</span>
+                <div class="step-icon">🎲</div>
+                <div class="step-title">AI Takes the GM Chair</div>
+                <p class="step-desc">Dynamic GM narrates, rolls dice, manages encounters, and keeps the story moving. Everyone at the table gets to be a player.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-num">04</span>
+                <div class="step-icon">⚡</div>
+                <div class="step-title">The Organizer Stays in Control</div>
+                <p class="step-desc">A private GM Override Panel lets the organizer review critical events — character death, critical rolls — and override the AI at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features-section">
+        <div class="section-label">Features</div>
+        <h2 class="section-title">Built Different</h2>
+        <p class="section-sub">Every competitor is cloud-based and subscription-gated. Dynamic GM is the only option for local, offline, group play.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-title"><div class="feature-dot"></div>Local Network — No Internet</div>
+                <p class="feature-desc">Works completely offline on your home or game room network. No accounts, no cloud dependency, no outages mid-session.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title"><div class="feature-dot"></div>One-Time Purchase</div>
+                <p class="feature-desc">$5 per player, $40 for the server. That's it. No monthly subscription, no token packs, no paywalled features.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title"><div class="feature-dot"></div>Works With Multiple Systems</div>
+                <p class="feature-desc">Built around open licensing — not just D&D. Pathfinder, Call of Cthulhu, Shadowrun and more. Rulesets are loadable modules.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title"><div class="feature-dot"></div>GM Override Panel</div>
+                <p class="feature-desc">The organizer sees critical events — nat 1s, character death, major plot moments — and can accept, modify, or override the AI's decision.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title"><div class="feature-dot"></div>Voice + Text Input</div>
+                <p class="feature-desc">Players speak or type their actions. The AI hears the table the same way a human GM would. Public voice, private text — both supported.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title"><div class="feature-dot"></div>Private Messaging</div>
+                <p class="feature-desc">Players can send secret messages to the AI — just like passing a note to your GM. Whisper conversations, secret actions, hidden agendas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTIFY BOTTOM -->
+    <section class="notify-section">
+        <div class="section-label" style="justify-content:center">Early Access</div>
+        <h2>Be First to Know</h2>
+        <p>Dynamic GM is in active development. Drop your email and we'll let you know when early access opens.</p>
+        <form class="notify-form" name="notify-bottom" netlify action="/dynamicgm/notify-dynamicgm.html">
+            <input type="hidden" name="form-name" value="dynamicgm-notify" />
+            <input type="email" name="email" placeholder="your@email.com">
+            <button type="submit" class="btn-primary">Notify Me</button>
+        </form>
+    </section>
+
+    <div class="by-aiis">
+        <p>Dynamic GM is a product of <a href="/">The AI Integration Specialists LLC</a> — Richmond, TX</p>
     </div>
-    <div class="hero-cta-note">🎲 No subscription. No cloud. No internet required.</div>
-  </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="how-section">
-    <div class="section-label">How It Works</div>
-    <h2 class="section-title">Setup in Minutes.<br>Adventure in Seconds.</h2>
-    <p class="section-sub">Dynamic GM runs entirely on your local network. No accounts, no cloud, no monthly fees — just your group and the game.</p>
-    <div class="steps-grid">
-      <div class="step-card">
-        <span class="step-num">01</span>
-        <div class="step-icon">💻</div>
-        <div class="step-title">Organizer Installs the Server</div>
-        <p class="step-desc">One person installs the $40 server tool on their laptop. It takes a few minutes and sets itself up. No technical knowledge required.</p>
-      </div>
-      <div class="step-card">
-        <span class="step-num">02</span>
-        <div class="step-icon">📱</div>
-        <div class="step-title">Players Join on Their Phones</div>
-        <p class="step-desc">Everyone else opens the $5 app and connects to the local game. No accounts, no sign-in. Just connect and play.</p>
-      </div>
-      <div class="step-card">
-        <span class="step-num">03</span>
-        <div class="step-icon">🎲</div>
-        <div class="step-title">AI Takes the GM Chair</div>
-        <p class="step-desc">Dynamic GM narrates, rolls dice, manages encounters, and keeps the story moving. Everyone at the table gets to be a player.</p>
-      </div>
-      <div class="step-card">
-        <span class="step-num">04</span>
-        <div class="step-icon">⚡</div>
-        <div class="step-title">The Organizer Stays in Control</div>
-        <p class="step-desc">A private GM Override Panel lets the organizer review critical events — character death, critical rolls — and override the AI at any time.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="features-section">
-    <div class="section-label">Features</div>
-    <h2 class="section-title">Built Different</h2>
-    <p class="section-sub">Every competitor is cloud-based and subscription-gated. Dynamic GM is the only option for local, offline, group play.</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-title"><div class="feature-dot"></div>Local Network — No Internet</div>
-        <p class="feature-desc">Works completely offline on your home or game room network. No accounts, no cloud dependency, no outages mid-session.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-title"><div class="feature-dot"></div>One-Time Purchase</div>
-        <p class="feature-desc">$5 per player, $40 for the server. That's it. No monthly subscription, no token packs, no paywalled features.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-title"><div class="feature-dot"></div>Works With Multiple Systems</div>
-        <p class="feature-desc">Built around open licensing — not just D&D. Pathfinder, Call of Cthulhu, Shadowrun and more. Rulesets are loadable modules.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-title"><div class="feature-dot"></div>GM Override Panel</div>
-        <p class="feature-desc">The organizer sees critical events — nat 1s, character death, major plot moments — and can accept, modify, or override the AI's decision.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-title"><div class="feature-dot"></div>Voice + Text Input</div>
-        <p class="feature-desc">Players speak or type their actions. The AI hears the table the same way a human GM would. Public voice, private text — both supported.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-title"><div class="feature-dot"></div>Private Messaging</div>
-        <p class="feature-desc">Players can send secret messages to the AI — just like passing a note to your GM. Whisper conversations, secret actions, hidden agendas.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- NOTIFY -->
-  <section class="notify-section">
-    <div class="section-label" style="justify-content:center">Early Access</div>
-    <h2>Be First to Know</h2>
-    <p>Dynamic GM is in active development. Drop your email and we'll let you know when early access opens.</p>
-    <form class="notify-form" name="dynamicgm-notify" netlify action="/dynamicgm/notify-dynamicgm.html">
-        <input type="hidden" name="form-name" value="dynamicgm-notify" />
-        <input type="email" name="email" placeholder="your@email.com">
-        <button type="submit" class="btn-primary">Notify Me</button>
-    </form>
-  </section>
-
-  <div class="by-aiis">
-    <p>Dynamic GM is a product of <a href="/">The AI Integration Specialists LLC</a> — Richmond, TX</p>
-  </div>
-
-  <footer>
-    <p>© 2026 The AI Integration Specialists LLC</p>
-    <p><a href="mailto:info@theaiis.com">info@theaiis.com</a></p>
-  </footer>
+    <footer>
+        <p>© 2026 The AI Integration Specialists LLC</p>
+        <p><a href="mailto:info@theaiis.com">info@theaiis.com</a></p>
+    </footer>
 
 </body>
 </html>
